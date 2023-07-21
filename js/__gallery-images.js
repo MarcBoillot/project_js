@@ -5,16 +5,21 @@
                 .then(response => response.json())
                 .then(data => {
                     for (const pokemon of data.results){
-                        fetch(pokemon.url)
-                        .then(response => response.json())
-                        .then(data => console.log(pokemon.url))
-                        console.log(pokemon);
                         const pokemon_name = document.createElement('p');
                         pokemon_name.innerHTML = pokemon.name;
                         const pokemon_img= document.createElement('div');
                         pokemon_img.innerHTML = pokemon.url;
                         pokemon_container.appendChild(pokemon_name);
                         pokemon_container.appendChild(pokemon_img);
+                        pokemon_container.appendChild(pokemon.front_default);
+
+                        fetch(pokemon.url)
+                        .then(response => response.json())
+                        .then(data => {
+                            const pokemon_url= document.createElement('img');
+                            pokemon_url.innerHTML = pokemon.front_default;
+                        })
+                        console.log(pokemon);
                     }
 
 
