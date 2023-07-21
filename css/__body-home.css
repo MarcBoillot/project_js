@@ -1,0 +1,26 @@
+.container__publicite-img {
+    background-color: antiquewhite;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.container__body {
+    background-color: grey;
+    height: auto;
+    padding-bottom: 50px;
+}
+.container__button-ajouter  {
+    text-align: center;
+    background-color: aliceblue;
+    margin-top: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.container__post {
+    background-color: aliceblue;
+    text-align: center;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 50px;
+    height: 200px;
+}

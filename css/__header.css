@@ -1,0 +1,22 @@
+nav {
+    background-color: grey;
+    text-align:center;
+    height: 30px;
+    padding-top: 15px;
+    position: sticky;
+}
+a {
+    margin-left: 40px;
+    margin-right: 40px;
+    text-decoration: none;
+}
+.container__topbar {
+    background-color: black;
+}
+.container__background-img{
+    background-color: bisque;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 100px;
+    text-align: center;
+}
