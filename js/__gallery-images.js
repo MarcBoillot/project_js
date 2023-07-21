@@ -7,19 +7,16 @@
                     for (const pokemon of data.results){
                         const pokemon_name = document.createElement('p');
                         pokemon_name.innerHTML = pokemon.name;
-                        const pokemon_img= document.createElement('div');
-                        pokemon_img.innerHTML = pokemon.url;
+                        const pokemon_img = document.createElement('img');
                         pokemon_container.appendChild(pokemon_name);
                         pokemon_container.appendChild(pokemon_img);
-                        pokemon_container.appendChild(pokemon.front_default);
 
                         fetch(pokemon.url)
                         .then(response => response.json())
                         .then(data => {
-                            const pokemon_url= document.createElement('img');
-                            pokemon_url.innerHTML = pokemon.front_default;
+                            pokemon_img.src = data.sprites.front_default;
                         })
-                        console.log(pokemon);
+                        
                     }
 
 
