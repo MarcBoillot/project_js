@@ -3,3 +3,7 @@
     height: auto;
     padding-bottom: 50px;
 }
+.carte_pokemon {
+    background-color: bisque;
+    text-align: center;
+}
