@@ -1,10 +1,33 @@
-/*
-function ajoutClick (){
-    document.getElementById("openFormButton").addEventListener("click", function() {
-    var formContainer = document.getElementById("formContainer");
-    formContainer.style.display = "block";
+/*function buttonClick() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }*/
+function jeanlouis (){
+    const btnAffichage = document.getElementById('btnAjout');
+    const Affichageform = document.getElementById('form');
+    let apparaitreform = false;
+    btnAffichage.addEventListener('click',function (){
+        Affichageform.style.display = 'none';
+        if(!apparaitreform){
+            Affichageform.style.display = 'block';
+            apparaitreform = true;
+        }else{
+            Affichageform.style.display = 'none';
+            apparaitreform = false;
+        }
     });
- }*/
+}
 function dataDisplay(data){
     const joke_container = document.getElementById('dataDisplay');
     for (const joke of data.jokes){
@@ -39,7 +62,8 @@ function fetchData() {
 
 // Appel initial pour récupérer et afficher les données au chargement de la page
 fetchData();
+jeanlouis();
 // Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
 
 const refreshButton = document.getElementById('refreshButton');
-refreshButton.addEventListener('click', refreshPage);
+

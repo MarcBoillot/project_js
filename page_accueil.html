@@ -17,14 +17,14 @@
         <div class="container__topbar">
 
             <div class="dropdown">
-                <button onclick="buttonClick()" class="dropbtn">Menu</button>
+               
                 <div id="myDropdown" class="dropdown-content">
                   <a href="page_accueil.html">Feed</a>
                   <a href="page_galerie.html">Gallery</a>
                   <a href="page_jeux.html">Jeux</a>
                 </div>
             </div>
-
+            
         </div>
         <div class="container__background-img">
             <p class="__image-header"></p>
@@ -52,74 +52,22 @@
             </div>
         </div>
     </div>
+    
     <div class="container__button-ajouter">
-        <button onclick="ajoutClick()" class="openFormButton">Ajouter un post</button>
-        <div id="formContainer" style="display: none;">
-            <form id="myForm">
-                <form action="" class="form" method="post">
-                    <div class="container-right">
-                        <fieldset class="fieldsetmecontacter">
-                            <legend class="entete-contact">Me contacter</legend>
-                            <div>
-                                <fieldset class="genre">
-                                    
-                                    <legend class="selection-genre">Sélectionner votre genre :</legend>
-                                    <label for="homme">M.</label>
-                                    <input type="radio" name="sexe" value="" id="homme">
-                                    
-                                    <label for="femme">Mme.</label>
-                                    <input type="radio" name="sexe" value="" id="femme">
-                                   
-                                 
-                                </fieldset><br>
-                            </div>
-                            <div>
-                                <label for="nameinput" class=text-danger>Votre nom</label>
-                                <input type="text" name="nom" id="nameinput" placeholder="Dupont" value="">
         
-                             
-                            </div><br>
-                            <div>
-                                <label for="nameinput">Votre prenom</label>
-                                <input type="text" name="prenom" id="nameinput" placeholder="Pierre" value="">
-        
-                            </div><br>
-                            <div>
-        
-                                <label for="emailinput">Votre e-mail</label>
-                                <input type="email" name="email" id="emailinput" placeholder="exemple@mail.fr" value=""> 
-                        
-        
-                            </div><br>
-                            <div>
-                                    <legend>Raison du contact</legend>
-        
-                                    <label for="raison" >Proposition d'emploi</label>
-                                    <input type="radio" name="selection" value="" class=text-danger id=proposition_d_emploi> 
-                                
-                                    <label for="raison" >Demande d'informations</label>
-                                    <input type="radio" name="selection" value="" id=Demande_information>  
-                                   
-                                    <label for="raison">Prestation</label>
-                                    <input type="radio" name="selection" value="" id=prestation> 
-                                 
-                            </div>
-                            <div>
-                                <label for="message"></label>
-                                <textarea name="message" id="message" cols="60" rows="20" placeholder="Ecrivez votre message" class="fieldtextarea" value=<?php echo $message ?>></textarea><br>
-        
-                            </div>
-                            <div>
-                                <input type="submit" value="Envoyer un mail" name="envoyer">
-                                <input type="reset" name="buton" value="Annuler">
-                                
-                            </div>
-                        </fieldset>
-                    </div>
-                </form>
-        
-            </form>
-          </div>
+               
+            
+    <form id="form">
+        <div>
+            <label for="amorce">Début de la blague</label><br>
+            <textarea id="amorce" name="texte" rows="5" cols="33"></textarea><br>
+
+            <label for="chute">Chute de la blague</label><br>
+            <textarea id="chute" name="story" rows="5" cols="33"></textarea><br>
+        </div> 
+    </form>
+
+    <button class="openFormButton" id="btnAjout">Ajouter un post</button>
     </div>
     <h1>Les blagues de Marc</h1>
     <div id="dataDisplay"></div>
@@ -133,7 +81,6 @@
     </footer>
     <script src ="js/__dropDown-header.js"></script>
     <script src="js/__home-posts.js"></script>
-    <script src ="js/__btn-home--ajouter.js"></script>
 </body>
 
 
