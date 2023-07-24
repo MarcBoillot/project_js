@@ -8,16 +8,25 @@
     <link rel="stylesheet" href="css/__header.css">
     <link rel="stylesheet" href="css/__footer.css">
     <link rel="stylesheet" href="css/__body-game.css">
+    <link rel="stylesheet" href="css/__dropDrown-header.css">
     <title>Games</title>
 </head>
 <body>
     <header>
         <div class="container__topbar">
-            <p>contact et burger</p>
-            <a href="">Menu Burger</a>
+
+            <div class="dropdown">
+                <button onclick="buttonClick()" class="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="page_accueil.html">Feed</a>
+                  <a href="page_galerie.html">Gallery</a>
+                  <a href="page_jeux.html">Jeux</a>
+                </div>
+            </div>
+
         </div>
         <div class="container__background-img">
-            <p class="__image-header">JEUX</p>
+            <p class="__image-header"></p>
         </div>
         <nav>
             <a href="page_accueil.html">Home</a>
@@ -28,10 +37,12 @@
     <div class="container__body">
         <p>mes jeux</p>
     </div>
+    <footer>
+        <div>
+            <p>liens réseaux</p>
+        </div>
+    </footer>
+    <script src ="js/__dropDown-header.js"></script>
 </body>
-<footer>
-    <div>
-        <p>liens réseaux</p>
-    </div>
-</footer>
+
 </html>

@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="css/__header.css">
     <link rel="stylesheet" href="css/__body-home.css">
     <link rel="stylesheet" href="css/__footer.css">
+    <link rel="stylesheet" href="css/__dropDrown-header.css">
     <title>Home</title>
 </head>
 <body>
     <header>
+        
         <div class="container__topbar">
-            <p>contact et burger</p>
-            <a href="">Menu Burger</a>
+
+            <div class="dropdown">
+                <button onclick="buttonClick()" class="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="page_accueil.html">Feed</a>
+                  <a href="page_galerie.html">Gallery</a>
+                  <a href="page_jeux.html">Jeux</a>
+                </div>
+            </div>
+
         </div>
         <div class="container__background-img">
-            <p class="__image-header">HOME</p>
+            <p class="__image-header"></p>
         </div>
         <nav>
             <a href="page_accueil.html">Home</a>
@@ -25,16 +35,39 @@
             <a href="page_jeux.html">Games</a>
         </nav>
     </header>    
-
     <div id="__data-container" class="container__body">
         <div class="container__publicite-img">
-            <p class="__image-publicité">publicité</p>
-        </div>
-        <div class="container__button-ajouter">
-            <a href="">bouton ajouter posts</a>
+            <div class="title">Publicité</div>
+            <div id="carousel1">
+                <div class="item">
+                    <div class="item__image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="item__body">
+                        <div class="item__title">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div class="container__button-ajouter">
+        <button onclick="ajoutClick()" class="openFormButton">Ajouter un post</button>
+        <div id="formContainer" style="display: none;">
+            <form id="myForm">
+              <label for="name">Nom:</label>
+              <input type="text" id="name" name="name" required>
+          
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+          
+              <!-- Autres champs du formulaire -->
+              
+              <input type="submit" value="Envoyer">
+            </form>
+          </div>
+    </div>
     <h1>Les blagues de Marc</h1>
     <div id="dataDisplay"></div>
     <button id="refreshButton">Actualiser</button>
@@ -45,7 +78,9 @@
         </div>
 
     </footer>
+    <script src ="js/__dropDown-header.js"></script>
     <script src="js/__home-posts.js"></script>
+    <script src ="js/__btn-home--ajouter.js"></script>
 </body>
 
 

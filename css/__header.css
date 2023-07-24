@@ -1,5 +1,8 @@
+body{
+    margin: 0;
+}
 nav {
-    background-color: grey;
+    background-color: rgb(218, 218, 218);
     text-align:center;
     height: 30px;
     padding-top: 15px;
@@ -11,12 +14,14 @@ a {
     text-decoration: none;
 }
 .container__topbar {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
 }
 .container__background-img{
-    background-color: bisque;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 100px;
-    text-align: center;
+    background-image: url('../img/sunset-g024115920_1280.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.__image-header {
+    height: 500px;
+    margin: 0;
 }

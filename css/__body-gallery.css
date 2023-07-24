@@ -1,9 +1,8 @@
 .container__body {
-    background-color: grey;
     height: auto;
     padding-bottom: 50px;
 }
 .carte_pokemon {
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
     text-align: center;
 }

@@ -7,9 +7,10 @@
                 console.log(pokemon);
                 // creation de div 
                 const wrapper_pokemon = document.createElement('div');
-                wrapper_pokemon.classList.add("carte_pokemon");
                 const pokemon_name = document.createElement('p');
                 const pokemon_img = document.createElement('img');
+                //creation d'une classe de div 
+                wrapper_pokemon.classList.add("carte_pokemon");
                 //definition du contenu
                 pokemon_name.innerHTML = pokemon.name;
                 //ajouter les div et img au DOM
@@ -20,7 +21,7 @@
                 fetch(pokemon.url)
                 .then(response => response.json())
                 .then(data => {
-                    //
+                    //source de l'image
                     pokemon_img.src = data.sprites.front_default;
                     console.log(data);
                 })

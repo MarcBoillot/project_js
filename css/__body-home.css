@@ -4,11 +4,7 @@
     padding-bottom: 50px;
     text-align: center;
 }
-.container__body {
-    background-color: grey;
-    height: auto;
-    padding-bottom: 50px;
-}
+
 .container__button-ajouter  {
     text-align: center;
     background-color: aliceblue;
@@ -17,10 +13,19 @@
     margin-left: 100px;
 }
 .container__post {
-    background-color: aliceblue;
     text-align: center;
     margin-right: 100px;
     margin-left: 100px;
     margin-top: 50px;
     height: 200px;
+}
+.post {
+    background-color: rgb(187, 187, 187);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 500px;
+    border-radius: 3px;
+}
+.response {
+   font-style: italic;
 }
