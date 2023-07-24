@@ -1,9 +1,10 @@
+/*
 function ajoutClick (){
     document.getElementById("openFormButton").addEventListener("click", function() {
     var formContainer = document.getElementById("formContainer");
     formContainer.style.display = "block";
     });
- }
+ }*/
 function dataDisplay(data){
     const joke_container = document.getElementById('dataDisplay');
     for (const joke of data.jokes){
