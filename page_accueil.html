@@ -13,28 +13,28 @@
 </head>
 <body>
     <header>
-        
+    
         <div class="container__topbar">
-
-            <div class="dropdown">
-               
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="page_accueil.html">Feed</a>
-                  <a href="page_galerie.html">Gallery</a>
-                  <a href="page_jeux.html">Jeux</a>
-                </div>
-            </div>
-            
         </div>
         <div class="container__background-img">
-            <p class="__image-header"></p>
+            <div class="dropdown">
+                <button onclick="buttonClick()" class="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="page_accueil.html">Feed</a>
+                    <a href="page_galerie.html">Gallery</a>
+                    <a href="page_jeux.html">Jeux</a>
+                </div>
+            </div>
+            <p class="__image-header"></p>0
+    
         </div>
         <nav>
             <a href="page_accueil.html">Home</a>
             <a href="page_galerie.html">Gallery</a>
             <a href="page_jeux.html">Games</a>
         </nav>
-    </header>    
+    
+    </header>
     <div id="__data-container" class="container__body">
         <div class="container__publicite-img">
             <div class="title">Publicité</div>
@@ -53,21 +53,20 @@
         </div>
     </div>
     
-    <div class="container__button-ajouter">
-        
-               
+    <div class="container__button-ajouter">          
             
     <form id="form">
         <div>
-            <label for="amorce">Début de la blague</label><br>
+            <label for="amorce" value="">Début de la blague</label><br>
             <textarea id="amorce" name="texte" rows="5" cols="33"></textarea><br>
 
             <label for="chute">Chute de la blague</label><br>
-            <textarea id="chute" name="story" rows="5" cols="33"></textarea><br>
+            <textarea id="chute" name="story" rows="5" cols="33"></textarea><br>      
         </div> 
     </form>
 
     <button class="openFormButton" id="btnAjout">Ajouter un post</button>
+    <button id="validerForm">Valider</button>
     </div>
     <h1>Les blagues de Marc</h1>
     <div id="dataDisplay"></div>

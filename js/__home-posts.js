@@ -22,9 +22,11 @@ function jeanlouis (){
         if(!apparaitreform){
             Affichageform.style.display = 'block';
             apparaitreform = true;
+            btnAffichage.innerHTML = 'masquer';
         }else{
             Affichageform.style.display = 'none';
             apparaitreform = false;
+            btnAffichage.innerHTML = 'Afficher le post';
         }
     });
 }
@@ -52,7 +54,7 @@ function dataDisplay(data){
 
 function fetchData() {
     
-    fetch('https://v2.jokeapi.dev/joke/Any?lang=fr&amount=10')
+    fetch('https://v2.jokeapi.dev/joke/Any?lang=fr&amount=20')
         .then(response => response.json())
         .then(data => dataDisplay(data))
         .catch(error => {
@@ -63,7 +65,13 @@ function fetchData() {
 // Appel initial pour récupérer et afficher les données au chargement de la page
 fetchData();
 jeanlouis();
-// Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
 
-const refreshButton = document.getElementById('refreshButton');
+// Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
+document.getElementById('refreshButton').addEventListener('click', function(){
+    location.reload();
+  });
+document.getElementById('validerForm').addEventListener('click', function(){
+    console.log('form');
+  });
+
 
