@@ -3,10 +3,14 @@ let colonne = document.getElementsByClassName('btncolonne')[0];
 //fonction lors du click btn -> mosaique ou colonne return css choisi
 mosaique.addEventListener('click',function (){
     const pokemon_container = document.getElementById('dataDisplay');
-    
     pokemon_container.classList.add('mosaique');
+    pokemon_container.classList.remove('colonne');
 });
-
+colonne.addEventListener('click',function (){
+    const pokemon_container = document.getElementById('dataDisplay');
+    pokemon_container.classList.add('colonne');
+    pokemon_container.classList.remove('mosaique');
+});
 
 // Fonction pour afficher les données et les afficher
 function dataDisplay(data) {
