@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="css/__dropDrown-header.css">
     <title>Home</title>
 </head>
+
 <body>
     <header>
-    
+
         <div class="container__topbar">
         </div>
         <div class="container__background-img">
@@ -26,14 +27,14 @@
                 </div>
             </div>
             <p class="__image-header"></p>0
-    
+
         </div>
         <nav>
             <a href="page_accueil.html">Home</a>
             <a href="page_galerie.html">Gallery</a>
             <a href="page_jeux.html">Games</a>
         </nav>
-    
+
     </header>
     <div id="__data-container" class="container__body">
         <div class="container__publicite-img">
@@ -45,40 +46,41 @@
                     </div>
                     <div class="item__body">
                         <div class="item__title">
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="container__button-ajouter">          
-            
-    <form id="form">
-        <div>
-            <label for="amorce" value="">Début de la blague</label><br>
-            <textarea  id="title" name="texte" rows="5" cols="33"></textarea><br>
 
-            <label class="texte" for="chute">Chute de la blague</label><br>
-            <textarea  id="texte" name="story" rows="5" cols="33"></textarea><br>      
-        </div> 
-    </form>
+    <div class="container__button-ajouter">
 
-    <button class="openFormButton" id="btnAjout">Ajouter un post</button>
-    <button id="validerForm">Valider</button>
+        <form id="form">
+            <div>
+                <label for="amorce" value="">Début de la blague</label><br>
+                <textarea id="title" name="texte" rows="5" cols="33"></textarea><br>
+
+                <label class="texte" for="chute">Chute de la blague</label><br>
+                <textarea id="texte" name="story" rows="5" cols="33"></textarea><br>
+            </div>
+        </form>
+
+        <button class="openFormButton" id="btnAjout">Ajouter un post</button>
+        <button id="validerForm">Valider</button>
+        <button id="refreshButton">Actualiser</button>
     </div>
     <h1>Les blagues de Marc</h1>
     <div id="dataDisplay"></div>
-    <button id="refreshButton">Actualiser</button>
     
+
     <footer>
         <div>
             <p>liens réseaux</p>
         </div>
 
     </footer>
-    <script src ="js/__dropDown-header.js"></script>
+    <script src="js/__dropDown-header.js"></script>
     <script src="js/__home-posts.js"></script>
 </body>
 

@@ -22,9 +22,10 @@
 .post {
     background-color: rgb(187, 187, 187);
     color: rgb(0, 0, 0);
-    text-align: center;
-    width: 500px;
     border-radius: 3px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
 }
 .response {
    font-style: italic;

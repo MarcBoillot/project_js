@@ -109,4 +109,3 @@ document.getElementById('validerForm').addEventListener('click', function(){
     console.log('form');
   });
 
-

@@ -11,5 +11,3 @@ function fetchDataAndDisplay() {
 fetchDataAndDisplay();
 
 // Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
-const refreshButton = document.getElementById('refreshButton');
-refreshButton.addEventListener('click', fetchDataAndDisplay);
