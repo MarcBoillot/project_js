@@ -13,7 +13,42 @@
       }
     }
   }*/
-function jeanlouis (){
+
+let post = document.getElementById('validerForm');
+//j'ecoute le click
+  post.addEventListener ('click' , (event) => {
+    //annule le comportement par defaut de l'envoi de form
+    event.preventDefault();
+    //je recup dans la variable l'html de la balise avec l'id 
+    let title = document.getElementById('title');
+    let texte = document.getElementById('texte');
+    addFormulaire(texte,title);
+    // j'efface les valeurs du form après les avoir envoyés 
+    document.getElementById("form").reset();
+})
+
+function addFormulaire (title, texte){
+  const joke_container = document.getElementById('dataDisplay');
+   
+        const wrapper_joke = document.createElement('div');
+        const joke_title = document.createElement('h3');
+        const joke_reponse= document.createElement('p');
+        //creation d'une claase de div qui se nomme post
+        wrapper_joke.classList.add("post");
+        joke_title.classList.add('title');
+        joke_reponse.classList.add('response');
+        //recupere l'html de l'api a l'emplacment
+        joke_reponse.innerHTML = title.value;
+        joke_title.innerHTML = texte.value;
+        //voir les appendChild comme les box des div joke_container est
+        //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
+        //wrapper_joke
+        joke_container.appendChild(wrapper_joke);
+        wrapper_joke.appendChild(joke_title);
+        wrapper_joke.appendChild(joke_reponse);
+}
+
+function affichageForm (){
     const btnAffichage = document.getElementById('btnAjout');
     const Affichageform = document.getElementById('form');
     let apparaitreform = false;
@@ -64,7 +99,7 @@ function fetchData() {
 
 // Appel initial pour récupérer et afficher les données au chargement de la page
 fetchData();
-jeanlouis();
+affichageForm();
 
 // Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
 document.getElementById('refreshButton').addEventListener('click', function(){
