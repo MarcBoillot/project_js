@@ -5,4 +5,24 @@
 .carte_pokemon {
     background-color: rgb(255, 255, 255);
     text-align: center;
+    border: 8px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 4px auto;
+    border-radius: 5px;
+}
+img {
+    height: 400px;
+    width: 400px;
+}
+.colonne{
+    display: block;    
+}
+.mosaique {
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn_position-img {
+    text-align: center;
+    margin:5px;
 }

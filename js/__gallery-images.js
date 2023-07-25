@@ -11,6 +11,8 @@
                 const pokemon_img = document.createElement('img');
                 //creation d'une classe de div 
                 wrapper_pokemon.classList.add("carte_pokemon");
+                pokemon_container.classList.add("mosaique");
+                pokemon_container.classList.add("colonne");
                 //definition du contenu
                 pokemon_name.innerHTML = pokemon.name;
                 //ajouter les div et img au DOM
