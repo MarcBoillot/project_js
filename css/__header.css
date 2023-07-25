@@ -13,9 +13,6 @@ a {
     margin-right: 40px;
     text-decoration: none;
 }
-.container__topbar {
-    background-color: rgb(255, 255, 255);
-}
 .container__background-img{
     background-image: url('../img/sunset-g024115920_1280.jpg');
     background-size: cover;

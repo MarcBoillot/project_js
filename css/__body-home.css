@@ -29,3 +29,6 @@
 .response {
    font-style: italic;
 }
+#form {
+    display: none;
+}
