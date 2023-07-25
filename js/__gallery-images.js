@@ -3,29 +3,11 @@ let colonne = document.getElementsByClassName('btncolonne')[0];
 //fonction lors du click btn -> mosaique ou colonne return css choisi
 mosaique.addEventListener('click',function (){
     const pokemon_container = document.getElementById('dataDisplay');
-    pokemon_container.classList.add('colonne');
+    
     pokemon_container.classList.add('mosaique');
 });
 
-function AffichagePosition (){
-    const btnAffichage = document.getElementById('btnmosaique')[0];
-    const AffichagePosition = document.getElementsByClassName('btn_position-img');
-    let apparaitrePosition = 'colonne';
-    btnAffichage.addEventListener('click',function (){
-        AffichagePosition.style.display = 'block';
-        if(!apparaitrePosition){
-            AffichagePosition.style.display = 'flex';
-            pokemon_container.classList.add('mosaique');
-            apparaitrePosition = 'mosaique';
-            btnAffichage.innerHTML = 'mosaique';
-        }else{
-            AffichagePosition.style.display = 'block';
-            pokemon_container.classList.add('colonne');
-            apparaitrePosition = 'colonne';
-            btnAffichage.innerHTML = 'colonne';
-        }
-    });
-}
+
 // Fonction pour afficher les données et les afficher
 function dataDisplay(data) {
     console.log(data);
