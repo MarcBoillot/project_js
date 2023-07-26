@@ -27,6 +27,9 @@ img {
     text-align: center;
     margin:0 auto;
 }
+.btn_position{
+    margin-bottom: 10px;
+}
 .btnmosaique {
     height: 50px;
     width: 200px;
@@ -34,8 +37,10 @@ img {
     margin-left: 50px;
 }
 #btnAjoutImg {
-    height: 50px;
-    width: 200px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+#valider {
     margin-right: 50px;
     margin-left: 50px;
 }
@@ -45,10 +50,17 @@ img {
     margin-left: 50px;
 }
 .btnrefresh {
-    height: 50px;
-    width: 200px;
     margin-right: 50px; 
     margin-left: 50px;  
+}
+.post {
+    text-align: center;
+    margin-top: 10px;
+    border: 15px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 4px auto;
+    border-radius: 5px;
 }
 footer {
     margin-bottom: 0;
