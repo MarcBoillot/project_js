@@ -75,7 +75,6 @@ document.getElementById('imageInput').addEventListener('change', function () {
             imageElement.src = event.target.result; // Récupérer l'URL de l'image depuis l'objet FileReader
             document.body.appendChild(imageElement); // Afficher l'image dans la page
         };
-
         // Lire le contenu du fichier d'image sous forme de données URL (base64)
         reader.readAsDataURL(file);
     }
