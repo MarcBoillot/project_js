@@ -30,8 +30,8 @@ let post = document.getElementById('valider');
     event.preventDefault();
     //je recup dans la variable l'html de la balise avec l'id 
     let title = document.getElementById('title');
-    let img = document.getElementById('imageInput');
-    addFormulaire(title,img);
+    let image = document.getElementById('imageInput');
+    addFormulaire(title,image);
     // j'efface les valeurs du form après les avoir envoyés 
     document.getElementById("form").reset();
 })
@@ -40,32 +40,32 @@ let post = document.getElementById('valider');
 //Ajouter la photo aux autres photos deja presentes 
 //----------------------------------------------------------------
 
-function addFormulaire (title, texte){
+function addFormulaire (title, image4){
     const img_container = document.getElementById('dataDisplay');
      
           const wrapper_img = document.createElement('div');
-          const img = document.createElement('img');
+          const image3 = document.createElement('img');
           const img_title= document.createElement('p');
-          //creation d'une claase de div qui se nomme post
+          //creation d'une classe de div qui se nomme post
           wrapper_img.classList.add("post");
           img_title.classList.add('title');
-          img.classList.add('img');
+          image3.classList.add('image');
           //recupere l'html de l'api a l'emplacment
           img_title.innerHTML = title.value;
-          img.src = img.value;
+          image3.src = image4.value;
           //voir les appendChild comme les box des div joke_container est
           //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
           //wrapper_joke
-          joke_container.appendChild(wrapper_joke);
-          wrapper_joke.appendChild(joke_title);
-          wrapper_joke.appendChild(joke_reponse);
-  }
+          img_container.appendChild(wrapper_img);
+          wrapper_img.appendChild(img_title);
+          wrapper_img.appendChild(image3);
+}
 
 //----------------------------------------------------------------
 //Création du chemmin pour recupérer l'image sur le pc
 //----------------------------------------------------------------
 
-document.getElementById('imageInput').addEventListener('change', function () {
+let imgrec = document.getElementById('imageInput').addEventListener('change', function () {
     let file = this.files[0]; // Récupérer le fichier d'image
     if (file) {
         let reader = new FileReader(); // Créer un objet FileReader
@@ -75,7 +75,8 @@ document.getElementById('imageInput').addEventListener('change', function () {
             imageElement.src = event.target.result; // Récupérer l'URL de l'image depuis l'objet FileReader
             document.body.appendChild(imageElement); // Afficher l'image dans la page
         };
-        // Lire le contenu du fichier d'image sous forme de données URL (base64)
+        // Lire le contenu du fichier d'image sous forme de données URL
+
         reader.readAsDataURL(file);
     }
 });

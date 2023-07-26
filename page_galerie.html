@@ -35,21 +35,23 @@
 
     </header>
     <div class="container__body">
-        <p>mes photos</p>
+        <p></p>
     </div>
-    <h1>Mes POKEMONS</h1>
+    <h1>Mes images</h1>
     <div class="btn_position-img">
+        <div class="btn_position">
+            <button class="btnmosaique">mosaique</button>
+            <button class="btncolonne">colonne</button><br>
+        </div>
         <button id="btnAjoutImg">Ajouter une image</button>
+        <button id="valider">valider l'ajout</button>
         <button id="refreshButton" class="btnrefresh">Actualiser</button>
-        <button class="btnmosaique">mosaique</button>
-        <button class="btncolonne">colonne</button>
     </div>
     <form id="form">
         <div class="container__formulaire-ajout">
             <label for="name" value="">Nom de l'image</label><br>
             <input id="title" name="texte" rows="5" cols="33"/><br>
             <input type="file" id="imageInput" style="display: inline-block;">
-            <button class="valider">valider</button>
         </div>
     </form>
     <div id="dataDisplay"></div>
