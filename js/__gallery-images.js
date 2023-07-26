@@ -75,8 +75,8 @@ let imgrec = document.getElementById('imageInput').addEventListener('change', fu
             imageElement.src = event.target.result; // Récupérer l'URL de l'image depuis l'objet FileReader
             document.body.appendChild(imageElement); // Afficher l'image dans la page
         };
-
         // Lire le contenu du fichier d'image sous forme de données URL
+
         reader.readAsDataURL(file);
     }
 });
