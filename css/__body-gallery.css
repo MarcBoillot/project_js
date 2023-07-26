@@ -36,14 +36,6 @@ img {
     margin-right: 50px;
     margin-left: 50px;
 }
-#btnAjoutImg {
-    margin-right: 50px;
-    margin-left: 50px;
-}
-#valider {
-    margin-right: 50px;
-    margin-left: 50px;
-}
 .btncolonne{
     height: 50px;
     width: 200px;
@@ -52,6 +44,10 @@ img {
 .btnrefresh {
     margin-right: 50px; 
     margin-left: 50px;  
+}
+.nameImg{
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .post {
     text-align: center;
@@ -66,7 +62,25 @@ footer {
     margin-bottom: 0;
     margin-top: 1955px;
 }
+.btnform {
+    text-align: center;
+    margin-top: 30px; 
+    margin-bottom: 30px;  
+}
 #form {
    text-align: center;
    display: none;
+   margin-bottom: 50px;
+}
+#btnAjoutImg {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+#valider {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+#title {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

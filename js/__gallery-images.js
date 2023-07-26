@@ -65,7 +65,7 @@ function addFormulaire (title, image4){
 //Création du chemmin pour recupérer l'image sur le pc
 //----------------------------------------------------------------
 
-let imgrec = document.getElementById('imageInput').addEventListener('change', function () {
+let recuperationImg = document.getElementById('imageInput').addEventListener('change', function () {
     let file = this.files[0]; // Récupérer le fichier d'image
     if (file) {
         let reader = new FileReader(); // Créer un objet FileReader
