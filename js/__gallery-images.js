@@ -1,3 +1,90 @@
+//----------------------------------------------------------------
+//Choix d'affichage d'un formulaire ou non 
+//----------------------------------------------------------------
+
+function affichageForm (){
+    const btnAffichage = document.getElementById('btnAjoutImg');
+    const Affichageform = document.getElementById('form');
+    let apparaitreform = false;
+    btnAffichage.addEventListener('click',function (){
+        if(!apparaitreform){
+            Affichageform.style.display = 'block';
+            apparaitreform = true;
+            btnAffichage.innerHTML = 'masquer';
+        }else{
+            Affichageform.style.display = 'none';
+            apparaitreform = false;
+            btnAffichage.innerHTML = 'Ajouter une image';
+        }
+    });
+}
+
+//----------------------------------------------------------------
+//Valider les données entrées dans le formulaire
+//----------------------------------------------------------------
+
+let post = document.getElementById('valider');
+//j'ecoute le click
+  post.addEventListener ('click' , (event) => {
+    //annule le comportement par defaut de l'envoi de form
+    event.preventDefault();
+    //je recup dans la variable l'html de la balise avec l'id 
+    let title = document.getElementById('title');
+    let img = document.getElementById('imageInput');
+    addFormulaire(title,img);
+    // j'efface les valeurs du form après les avoir envoyés 
+    document.getElementById("form").reset();
+})
+
+//----------------------------------------------------------------
+//Ajouter la photo aux autres photos deja presentes 
+//----------------------------------------------------------------
+
+function addFormulaire (title, texte){
+    const img_container = document.getElementById('dataDisplay');
+     
+          const wrapper_img = document.createElement('div');
+          const img = document.createElement('img');
+          const img_title= document.createElement('p');
+          //creation d'une claase de div qui se nomme post
+          wrapper_img.classList.add("post");
+          img_title.classList.add('title');
+          img.classList.add('img');
+          //recupere l'html de l'api a l'emplacment
+          img_title.innerHTML = title.value;
+          img.src = img.value;
+          //voir les appendChild comme les box des div joke_container est
+          //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
+          //wrapper_joke
+          joke_container.appendChild(wrapper_joke);
+          wrapper_joke.appendChild(joke_title);
+          wrapper_joke.appendChild(joke_reponse);
+  }
+
+//----------------------------------------------------------------
+//Création du chemmin pour recupérer l'image sur le pc
+//----------------------------------------------------------------
+
+document.getElementById('imageInput').addEventListener('change', function () {
+    let file = this.files[0]; // Récupérer le fichier d'image
+    if (file) {
+        let reader = new FileReader(); // Créer un objet FileReader
+        // Définir la fonction de rappel à exécuter lorsque la lecture du fichier est terminée
+        reader.onload = function (event) {
+            let imageElement = document.createElement('img');
+            imageElement.src = event.target.result; // Récupérer l'URL de l'image depuis l'objet FileReader
+            document.body.appendChild(imageElement); // Afficher l'image dans la page
+        };
+
+        // Lire le contenu du fichier d'image sous forme de données URL (base64)
+        reader.readAsDataURL(file);
+    }
+});
+
+//----------------------------------------------------------------
+//Affichage MOSAIQUE OU COLONNE
+//----------------------------------------------------------------
+
 let mosaique =document.getElementsByClassName('btnmosaique')[0];
 let colonne = document.getElementsByClassName('btncolonne')[0];
 //fonction lors du click btn -> mosaique ou colonne return css choisi
@@ -12,7 +99,10 @@ colonne.addEventListener('click',function (){
     pokemon_container.classList.remove('mosaique');
 });
 
-// Fonction pour afficher les données et les afficher
+//----------------------------------------------------------------
+//Affichage des cartes pokemons
+//----------------------------------------------------------------
+
 function dataDisplay(data) {
     console.log(data);
     //recuperation dans la variable tous le dom par l'id et en lien avec l'id html
@@ -43,6 +133,11 @@ function dataDisplay(data) {
             })
     }
 }
+
+//----------------------------------------------------------------
+//récuparation de l'image par la fonction qui recupere l'url de l'image
+//----------------------------------------------------------------
+
 function fetchData(url) {
     fetch(url)
         .then(response => response.json())
@@ -52,42 +147,21 @@ function fetchData(url) {
         });
 }
 
+//----------------------------------------------------------------
 // Appel initial pour récupérer et afficher les données au chargement de la page
+//----------------------------------------------------------------
+
 fetchData('https://pokeapi.co/api/v2/pokemon/');
-AffichagePosition();
+affichageForm();
+addFormulaire();
+
+//----------------------------------------------------------------
 // Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
+//----------------------------------------------------------------
+
 const refreshButton = document.getElementById('refreshButton');
-       /* <button onclick="changerDisposition()">Changer la disposition</button>
-<div id="conteneurImages">
-<img id="image1" src="chemin/vers/image1.jpg" alt="Image 1">
-<img id="image2" src="chemin/vers/image2.jpg" alt="Image 2">
-</div>
-function changerDisposition() {
-// Récupérer les références des images et du conteneur
-const image1 = document.getElementById('image1');
-const image2 = document.getElementById('image2');
-const conteneurImages = document.getElementById('conteneurImages');
+       
 
-// Récupérer la disposition actuelle des images
-const image1Affichee = (image1.style.display !== 'none');
-
-// Changer la disposition des images en les masquant ou affichant selon la disposition actuelle
-if (image1Affichee) {
-image1.style.display = 'none';
-image2.style.display = 'block';
-// Pour aligner les images verticalement lorsque la disposition est changée
-conteneurImages.style.flexDirection = 'column';
-} else {
-image1.style.display = 'block';
-image2.style.display = 'none';
-// Pour aligner les images horizontalement lorsque la disposition est changée
-conteneurImages.style.flexDirection = 'row';
-}
-}
-Dans cet exemple, nous utilisons une variable image1Affichee pour vérifier si la première image est actuellement affichée ou non. Ensuite, lorsque vous cliquez sur le bouton, la disposition des images est modifiée en fonction de l'état actuel.
-
-Notez que vous devrez remplacer "chemin/vers/image1.jpg" et "chemin/vers/image2.jpg" par les URL réelles des images que vous souhaitez afficher. De plus, assurez-vous de placer ce script dans la section <head> ou <body> de votre page HTML.
-*/
 
 
 

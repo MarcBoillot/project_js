@@ -25,19 +25,36 @@ img {
 }
 .btn_position-img {
     text-align: center;
-    margin:5px;
+    margin:0 auto;
 }
 .btnmosaique {
     height: 50px;
     width: 200px;
     margin-right: 50px;
+    margin-left: 50px;
+}
+#btnAjoutImg {
+    height: 50px;
+    width: 200px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 .btncolonne{
     height: 50px;
     width: 200px;
     margin-left: 50px;
 }
+.btnrefresh {
+    height: 50px;
+    width: 200px;
+    margin-right: 50px; 
+    margin-left: 50px;  
+}
 footer {
     margin-bottom: 0;
     margin-top: 1955px;
+}
+#form {
+   text-align: center;
+   display: none;
 }

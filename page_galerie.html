@@ -39,11 +39,20 @@
     </div>
     <h1>Mes POKEMONS</h1>
     <div class="btn_position-img">
+        <button id="btnAjoutImg">Ajouter une image</button>
+        <button id="refreshButton" class="btnrefresh">Actualiser</button>
         <button class="btnmosaique">mosaique</button>
         <button class="btncolonne">colonne</button>
     </div>
+    <form id="form">
+        <div class="container__formulaire-ajout">
+            <label for="name" value="">Nom de l'image</label><br>
+            <input id="title" name="texte" rows="5" cols="33"/><br>
+            <input type="file" id="imageInput" style="display: inline-block;">
+            <button class="valider">valider</button>
+        </div>
+    </form>
     <div id="dataDisplay"></div>
-    <button id="refreshButton">Actualiser</button>
     <footer>
         <div>
             <p>liens réseaux</p>
@@ -51,7 +60,6 @@
     </footer>
     <script src="js/__dropDown-header.js"></script>
     <script src="js/__gallery-images.js"></script>
-    
 </body>
 
 </html>

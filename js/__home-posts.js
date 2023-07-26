@@ -14,6 +14,32 @@
     }
   }*/
 
+//----------------------------------------------------------------
+//Choix affichage du formulaire ou non
+//----------------------------------------------------------------
+
+  function affichageForm (){
+    const btnAffichage = document.getElementById('btnAjout');
+    const Affichageform = document.getElementById('form');
+    let apparaitreform = false;
+    btnAffichage.addEventListener('click',function (){
+        
+        if(!apparaitreform){
+            Affichageform.style.display = 'block';
+            apparaitreform = true;
+            btnAffichage.innerHTML = 'masquer';
+        }else{
+            Affichageform.style.display = 'none';
+            apparaitreform = false;
+            btnAffichage.innerHTML = 'Afficher le post';
+        }
+    });
+}
+
+//----------------------------------------------------------------
+//Validation du formulaire
+//----------------------------------------------------------------
+
 let post = document.getElementById('validerForm');
 //j'ecoute le click
   post.addEventListener ('click' , (event) => {
@@ -26,6 +52,10 @@ let post = document.getElementById('validerForm');
     // j'efface les valeurs du form après les avoir envoyés 
     document.getElementById("form").reset();
 })
+
+//----------------------------------------------------------------
+//Creation de d'élements et recuperation des valeurs entrées
+//----------------------------------------------------------------
 
 function addFormulaire (title, texte){
   const joke_container = document.getElementById('dataDisplay');
@@ -48,30 +78,17 @@ function addFormulaire (title, texte){
         wrapper_joke.appendChild(joke_reponse);
 }
 
-function affichageForm (){
-    const btnAffichage = document.getElementById('btnAjout');
-    const Affichageform = document.getElementById('form');
-    let apparaitreform = false;
-    btnAffichage.addEventListener('click',function (){
-        Affichageform.style.display = 'none';
-        if(!apparaitreform){
-            Affichageform.style.display = 'block';
-            apparaitreform = true;
-            btnAffichage.innerHTML = 'masquer';
-        }else{
-            Affichageform.style.display = 'none';
-            apparaitreform = false;
-            btnAffichage.innerHTML = 'Afficher le post';
-        }
-    });
-}
+//----------------------------------------------------------------
+//Création d'éléments et recupération des données de l'API
+//----------------------------------------------------------------
+
 function dataDisplay(data){
     const joke_container = document.getElementById('dataDisplay');
     for (const joke of data.jokes){
         const wrapper_joke = document.createElement('div');
         const joke_title = document.createElement('h3');
         const joke_reponse= document.createElement('p');
-        //creation d'une claase de div qui se nomme post
+        //creation d'une classe de div qui se nomme post
         wrapper_joke.classList.add("post");
         joke_title.classList.add('title');
         joke_reponse.classList.add('response');
@@ -97,11 +114,17 @@ function fetchData() {
         });
 }
 
-// Appel initial pour récupérer et afficher les données au chargement de la page
+//----------------------------------------------------------------
+// Appel des fonctions pour récupérer et afficher les données au chargement de la page
+//----------------------------------------------------------------
+
 fetchData();
 affichageForm();
 
+//----------------------------------------------------------------
 // Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
+//----------------------------------------------------------------
+
 document.getElementById('refreshButton').addEventListener('click', function(){
     location.reload();
   });
