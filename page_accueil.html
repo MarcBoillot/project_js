@@ -38,50 +38,46 @@
     </header>
     <div id="__data-container" class="container__body">
         <div class="container__publicite-img">
-            <div class="title">Publicité</div>
-            <div id="carousel1">
-                <div class="item">
-                    <div class="item__image">
-                        <img src="" alt="">
-                    </div>
-                    <div class="item__body">
-                        <div class="item__title">
+            <div id="caroussel">
+                <article>
+                    <img src="img/Capture d’écran du 2023-07-10 13-59-06.png" alt="">
+                </article>
+                <article>
+                    <img src="img/Capture d’écran du 2023-07-10 14-03-08.png" alt="">
+                </article>
+                <article>
+                    <img src="img/Capture d’écran du 2023-07-10 14-11-24.png" alt="">
+                </article>
+            </div>
+        </div>
+        <div class="container__button-ajouter">
 
-                        </div>
-                    </div>
+            <form id="form">
+                <div>
+                    <label for="amorce" value="">Début de la blague</label><br>
+                    <textarea id="title" name="texte" rows="5" cols="33"></textarea><br>
+
+                    <label class="texte" for="chute">Chute de la blague</label><br>
+                    <textarea id="texte" name="story" rows="5" cols="33"></textarea><br>
                 </div>
-            </div>
+            </form>
+
+            <button class="openFormButton" id="btnAjout">Ajouter un post</button>
+            <button id="validerForm">Valider</button>
+            <button id="refreshButton">Actualiser</button>
         </div>
-    </div>
+        <h1>Les blagues de Marc</h1>
+        <div id="dataDisplay"></div>
 
-    <div class="container__button-ajouter">
 
-        <form id="form">
+        <footer>
             <div>
-                <label for="amorce" value="">Début de la blague</label><br>
-                <textarea id="title" name="texte" rows="5" cols="33"></textarea><br>
-
-                <label class="texte" for="chute">Chute de la blague</label><br>
-                <textarea id="texte" name="story" rows="5" cols="33"></textarea><br>
+                <p>liens réseaux</p>
             </div>
-        </form>
 
-        <button class="openFormButton" id="btnAjout">Ajouter un post</button>
-        <button id="validerForm">Valider</button>
-        <button id="refreshButton">Actualiser</button>
-    </div>
-    <h1>Les blagues de Marc</h1>
-    <div id="dataDisplay"></div>
-    
-
-    <footer>
-        <div>
-            <p>liens réseaux</p>
-        </div>
-
-    </footer>
-    <script src="js/__dropDown-header.js"></script>
-    <script src="js/__home-posts.js"></script>
+        </footer>
+        <script src="js/__dropDown-header.js"></script>
+        <script src="js/__home-posts.js"></script>
 </body>
 
 

@@ -32,13 +32,13 @@ img {
 }
 .btnmosaique {
     height: 50px;
-    width: 200px;
+    width: 100px;
     margin-right: 50px;
     margin-left: 50px;
 }
 .btncolonne{
     height: 50px;
-    width: 200px;
+    width: 100px;
     margin-left: 50px;
 }
 .btnrefresh {

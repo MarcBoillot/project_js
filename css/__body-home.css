@@ -1,5 +1,4 @@
 .container__publicite-img {
-    background-color: antiquewhite;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
@@ -7,7 +6,6 @@
 
 .container__button-ajouter  {
     text-align: center;
-    background-color: aliceblue;
     margin-top: 40px;
     margin-right: 100px;
     margin-left: 100px;
@@ -30,6 +28,10 @@
 .response {
    font-style: italic;
 }
+#caroussel{
+    display: flex;
+}
+
 #form {
     display: none;
 }
