@@ -13,6 +13,16 @@
       }
     }
   }*/
+//----------------------------------------------------------------
+//Suppression d'un post
+//----------------------------------------------------------------
+
+function deletePost(){
+const deletePost = document.getElementsByClassName('post');
+deletePost.addEventListener('click',function (){
+deletePost.remove();
+});
+}
 
 //----------------------------------------------------------------
 //Choix affichage du formulaire ou non
@@ -63,6 +73,12 @@ function addFormulaire (title, texte){
         const wrapper_joke = document.createElement('div');
         const joke_title = document.createElement('h3');
         const joke_reponse= document.createElement('p');
+        const btnDelete = document.createElement('button');
+        btnDelete.textContent = 'supprimer';
+        //le delete
+        btnDelete.addEventListener('click',()=>{
+          btnDelete.parentElement.remove();
+        })
         //creation d'une claase de div qui se nomme post
         wrapper_joke.classList.add("post");
         joke_title.classList.add('title');
@@ -73,6 +89,7 @@ function addFormulaire (title, texte){
         //voir les appendChild comme les box des div joke_container est
         //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
         //wrapper_joke
+        wrapper_joke.appendChild(btnDelete);
         joke_container.appendChild(wrapper_joke);
         wrapper_joke.appendChild(joke_title);
         wrapper_joke.appendChild(joke_reponse);
@@ -89,6 +106,7 @@ function dataDisplay(data){
         const joke_title = document.createElement('h3');
         const joke_reponse= document.createElement('p');
         //creation d'une classe de div qui se nomme post
+        wrapper_joke.classList.add('delete');
         wrapper_joke.classList.add("post");
         joke_title.classList.add('title');
         joke_reponse.classList.add('response');
@@ -98,6 +116,7 @@ function dataDisplay(data){
         //voir les appendChild comme les box des div joke_container est
         //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
         //wrapper_joke
+        
         joke_container.appendChild(wrapper_joke);
         wrapper_joke.appendChild(joke_title);
         wrapper_joke.appendChild(joke_reponse);

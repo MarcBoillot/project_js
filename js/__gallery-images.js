@@ -2,16 +2,16 @@
 //Choix d'affichage d'un formulaire ou non 
 //----------------------------------------------------------------
 
-function affichageForm (){
+function affichageForm() {
     const btnAffichage = document.getElementById('btnAjoutImg');
     const Affichageform = document.getElementById('form');
     let apparaitreform = false;
-    btnAffichage.addEventListener('click',function (){
-        if(!apparaitreform){
+    btnAffichage.addEventListener('click', function () {
+        if (!apparaitreform) {
             Affichageform.style.display = 'block';
             apparaitreform = true;
             btnAffichage.innerHTML = 'masquer';
-        }else{
+        } else {
             Affichageform.style.display = 'none';
             apparaitreform = false;
             btnAffichage.innerHTML = 'Ajouter une image';
@@ -25,13 +25,13 @@ function affichageForm (){
 
 let post = document.getElementById('valider');
 //j'ecoute le click
-  post.addEventListener ('click' , (event) => {
+post.addEventListener('click', (event) => {
     //annule le comportement par defaut de l'envoi de form
     event.preventDefault();
     //je recup dans la variable l'html de la balise avec l'id 
     let title = document.getElementById('title');
     let image = document.getElementById('imageInput');
-    addFormulaire(title,image);
+    addFormulaire(title, image);
     // j'efface les valeurs du form après les avoir envoyés 
     document.getElementById("form").reset();
 })
@@ -40,25 +40,32 @@ let post = document.getElementById('valider');
 //Ajouter la photo aux autres photos deja presentes 
 //----------------------------------------------------------------
 
-function addFormulaire (title, image4){
+function addFormulaire(title, image4) {
     const img_container = document.getElementById('dataDisplay');
-     
-          const wrapper_img = document.createElement('div');
-          const image3 = document.createElement('img');
-          const img_title= document.createElement('p');
-          //creation d'une classe de div qui se nomme post
-          wrapper_img.classList.add("post");
-          img_title.classList.add('title');
-          image3.classList.add('image');
-          //recupere l'html de l'api a l'emplacment
-          img_title.innerHTML = title.value;
-          image3.src = image4.value;
-          //voir les appendChild comme les box des div joke_container est
-          //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
-          //wrapper_joke
-          img_container.appendChild(wrapper_img);
-          wrapper_img.appendChild(img_title);
-          wrapper_img.appendChild(image3);
+
+    const wrapper_img = document.createElement('div');
+    const image3 = document.createElement('img');
+    const img_title = document.createElement('p');
+    const btnDelete = document.createElement('button');
+    btnDelete.textContent = 'supprimer';
+    //le delete
+    btnDelete.addEventListener('click', () => {
+        btnDelete.parentElement.remove();
+    })
+    //creation d'une classe de div qui se nomme post
+    wrapper_img.classList.add("post");
+    img_title.classList.add('title');
+    image3.classList.add('image');
+    //recupere l'html de l'api a l'emplacment
+    img_title.innerHTML = title.value;
+    image3.src = image4.value;
+    //voir les appendChild comme les box des div joke_container est
+    //le parent de wrapper_joke et joke_title/reponse sont les enfants de 
+    //wrapper_joke
+    wrapper_img.appendChild(btnDelete);
+    img_container.appendChild(wrapper_img);
+    wrapper_img.appendChild(img_title);
+    wrapper_img.appendChild(image3);
 }
 
 //----------------------------------------------------------------
@@ -85,15 +92,15 @@ let recuperationImg = document.getElementById('imageInput').addEventListener('ch
 //Affichage MOSAIQUE OU COLONNE
 //----------------------------------------------------------------
 
-let mosaique =document.getElementsByClassName('btnmosaique')[0];
+let mosaique = document.getElementsByClassName('btnmosaique')[0];
 let colonne = document.getElementsByClassName('btncolonne')[0];
 //fonction lors du click btn -> mosaique ou colonne return css choisi
-mosaique.addEventListener('click',function (){
+mosaique.addEventListener('click', function () {
     const pokemon_container = document.getElementById('dataDisplay');
     pokemon_container.classList.add('mosaique');
     pokemon_container.classList.remove('colonne');
 });
-colonne.addEventListener('click',function (){
+colonne.addEventListener('click', function () {
     const pokemon_container = document.getElementById('dataDisplay');
     pokemon_container.classList.add('colonne');
     pokemon_container.classList.remove('mosaique');
@@ -135,6 +142,17 @@ function dataDisplay(data) {
 }
 
 //----------------------------------------------------------------
+//Suppression d'un post
+//----------------------------------------------------------------
+
+function deletePost() {
+    const deletePost = document.getElementsByClassName('post');
+    deletePost.addEventListener('click', function () {
+        deletePost.remove();
+    });
+}
+
+//----------------------------------------------------------------
 //récuparation de l'image par la fonction qui recupere l'url de l'image
 //----------------------------------------------------------------
 
@@ -154,13 +172,12 @@ function fetchData(url) {
 fetchData('https://pokeapi.co/api/v2/pokemon/');
 affichageForm();
 addFormulaire();
-
 //----------------------------------------------------------------
 // Ajoutez un gestionnaire d'événement pour actualiser les données au clic sur le bouton
 //----------------------------------------------------------------
 
 const refreshButton = document.getElementById('refreshButton');
-       
+
 
 
 
