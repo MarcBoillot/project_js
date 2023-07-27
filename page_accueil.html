@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/__body-home.css">
     <link rel="stylesheet" href="css/__footer.css">
     <link rel="stylesheet" href="css/__dropDrown-header.css">
+    <link rel="stylesheet" href="css/__caroussel-home.css">
     <title>Home</title>
 </head>
 
@@ -36,19 +37,22 @@
         </nav>
 
     </header>
+    <button onclick="buttonClick()" class="nextbtn">NEXT</button>
     <div id="__data-container" class="container__body">
-        <div class="container__publicite-img">
-            <div id="caroussel">
-                <article>
+        <div class="caroussel">
+            
+            <div id="myCaroussel" class="caroussel-content">  
+               
                     <img src="img/Capture d’écran du 2023-07-10 13-59-06.png" alt="">
-                </article>
-                <article>
+              
+                
                     <img src="img/Capture d’écran du 2023-07-10 14-03-08.png" alt="">
-                </article>
-                <article>
+                
+               
                     <img src="img/Capture d’écran du 2023-07-10 14-11-24.png" alt="">
-                </article>
-            </div>
+                    
+                
+            </div>  
         </div>
         <div class="container__button-ajouter">
 
@@ -78,6 +82,7 @@
         </footer>
         <script src="js/__dropDown-header.js"></script>
         <script src="js/__home-posts.js"></script>
+        <script src="js/__carousel-home.js"></script>
 </body>
 
 
