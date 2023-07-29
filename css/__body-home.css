@@ -33,3 +33,24 @@
 #form {
     display: none;
 }
+.container__img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.tailleImg{
+    text-align: center;
+    width: 1000px;
+    height: 900px;
+}
+.preview{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+.next {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

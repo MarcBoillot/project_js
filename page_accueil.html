@@ -36,22 +36,13 @@
         </nav>
 
     </header>
-    <div id="__data-container" class="container__body">
-        <div class="container__publicite-img">
-            <div class="title">Publicité</div>
-            <div id="carousel1">
-                <div class="item">
-                    <div class="item__image">
-                        <img src="" alt="">
-                    </div>
-                    <div class="item__body">
-                        <div class="item__title">
-
-                        </div>
-                    </div>
-                </div>
+    <div id="__publicite-container" class="container__img">
+            <div class="preview" onclick="slideClick(-1)">avant</div>
+            <div class="tailleImg">
+                <img id="img1" src="img/Capture d’écran 2023-07-28 111946.png" alt="">
             </div>
-        </div>
+            
+            <div class="next" onclick="slideClick(1)">après</div>
     </div>
 
     <div class="container__button-ajouter">
@@ -82,6 +73,7 @@
     </footer>
     <script src="js/__dropDown-header.js"></script>
     <script src="js/__home-posts.js"></script>
+    <script src="js/__carousel-home.js"></script>
 </body>
 
 
